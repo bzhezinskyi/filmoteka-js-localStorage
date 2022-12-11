@@ -1,0 +1,12 @@
+.header {
+  background-color: $header-bg-color;
+}
+.logo {
+  &__svg {
+    width: 24px;
+    height: 24px;
+  }
+  &__name {
+    color: $main-light-color;
+  }
+}
