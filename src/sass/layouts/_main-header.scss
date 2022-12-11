@@ -1,12 +1,150 @@
 .header {
+  position: relative;
+
   background-color: $header-bg-color;
+  height: 230px;
+  padding-top: 40px;
+
+  background-size: 100% 100%;
+  background-image: url(./../images/header/hero.jpg);
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(./../images/header/hero@2x.jpg);
+  }
+  @media screen and (min-width: 768px) {
+    height: 216px;
+    padding-top: 45px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 }
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 41px;
+
+  &__item {
+    color: $main-light-color;
+    transition: $animation;
+
+    margin-right: 40px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover,
+    :focus {
+      color: $site-nav-link-active;
+    }
+  }
+  &__link {
+    color: currentColor;
+    text-transform: uppercase;
+    font-style: $main-font;
+    font-weight: 500;
+    font-style: 12px;
+    &-active {
+      border-bottom: solid $site-nav-link-active;
+    }
+  }
+}
+
 .logo {
   &__svg {
     width: 24px;
     height: 24px;
   }
   &__name {
+    @media screen and (max-width: 479px) {
+      // visually-hidden
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      clip-path: inset(100%);
+      clip: rect(0 0 0 0);
+      overflow: hidden;
+    }
+    @media screen and (min-width: 480px) {
+      color: $main-light-color;
+      font-style: $main-font;
+      font-size: 30px;
+      font-weight: 500;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 16px auto;
+  width: 280px;
+
+  border-bottom: 0.5px solid $main-light-color;
+  @media screen and (min-width: 480px) {
+    margin: 0 auto 20px auto;
+    width: 336px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 394px;
+  }
+
+  &__input {
+    background-color: inherit;
     color: $main-light-color;
+    outline: none;
+    border: none;
+
+    &::placeholder {
+      color: $main-light-color;
+    }
+  }
+  &__search {
+    border: none;
+    background-color: inherit;
+    color: $main-light-color;
+
+    &-svg {
+      fill: currentColor;
+    }
+  }
+  &__error {
+    width: 280px;
+    margin: 0 auto;
+    color: $site-nav-link-active;
+    font-size: 14px;
+    font-weight: 400;
+    @media screen and (min-width: 480px) {
+      width: 393px;
+    }
+    @media screen and (min-width: 1280px) {
+      width: 394px;
+    }
+  }
+}
+
+.thema-btn {
+  position: absolute;
+  right: 20px;
+  bottom: -40px;
+  border: none;
+  background-color: transparent;
+  color: $main-light-color;
+  @media screen and (min-width: 768px) {
+    bottom: -30px;
+  }
+
+  &__svg {
+    fill: currentColor;
   }
 }
