@@ -16,6 +16,30 @@
     height: 216px;
     padding-top: 45px;
   }
+  &-librari {
+    background-size: auto 100%;
+    @media screen and (min-width: 1280px) {
+      background-size: 100% auto;
+
+      background-position: center bottom;
+    }
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)
+      ),
+      url(../images/header/hero-librari.jpg);
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.56),
+          rgba(0, 0, 0, 0.56)
+        ),
+        url(../images/header/hero-librari@2x.jpg);
+    }
+  }
 
   &__container {
     display: flex;
@@ -133,6 +157,35 @@
   }
 }
 
+.btn-box {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  &__btn {
+    width: 130px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    margin-right: 20px;
+
+    border: 1px solid $main-light-color;
+    border-radius: 5px;
+    background-color: inherit;
+    color: $main-light-color;
+
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    &:last-child {
+      margin-right: 0;
+    }
+    &-active {
+      border: none;
+      background: $main-accent-color;
+      box-shadow: $btn-box-shadow;
+    }
+  }
+}
+
 .thema-btn {
   position: absolute;
   right: 20px;
@@ -140,6 +193,9 @@
   border: none;
   background-color: transparent;
   color: $main-light-color;
+  &__librari {
+    bottom: -60px;
+  }
   @media screen and (min-width: 768px) {
     bottom: -30px;
   }
